@@ -3,7 +3,7 @@ window.addEventListener('load', function () {
     var loadingCircle = document.querySelector('.lds-ring');
     // Získání elementu s obsahem stránky s grafem
     var content = document.querySelector('#content');
-
+    var zoom = 1;
     // Inicializace Wavesurfer
     var wavesurfer = WaveSurfer.create({
         container: '#waveform',
@@ -24,16 +24,22 @@ window.addEventListener('load', function () {
     // Přidání funkcionality pro zoom in
     document.getElementById('zoom-in').addEventListener('click', function () {
         // Zobrazit zvukovou stopu, pokud není již zobrazena
+        if (zoom <= 5) {
+            zoom += 1;
+            // Zoom in
+            wavesurfer.zoom(zoom);
+        }
 
-        // Zoom in
-        wavesurfer.zoom(5);
     });
 
     // Přidání funkcionality pro zoom out
     document.getElementById('zoom-out').addEventListener('click', function () {
         // Zobrazit zvukovou stopu, pokud není již zobrazena
+        if (zoom > 0) {
+            zoom -= 1;
+            wavesurfer.zoom(zoom);
+        }
 
-        wavesurfer.zoom(-5);
     });
 
     // Aktualizace zobrazení aktuálního času
