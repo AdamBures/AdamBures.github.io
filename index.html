@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Načítání stránky s Wavesurfer</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/wavesurfer.js@7"></script>
+</head>
+
+<body>
+    <div class="lds-ring">
+        <div></div>
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+
+    <div class="fade-in" id="content" style="display: none;">
+        <!-- Sem vložte tlačítka pro zoom in, zoom out a zvukovou stopu -->
+        <div id="waveform"></div>
+        <button class="button button5" id="zoom-in">Zoom In</button>
+        <button class="button button5" id="zoom-out">Zoom Out</button>
+        <div id="current-time">Aktuální čas: 0:00</div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
